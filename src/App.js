@@ -1,6 +1,6 @@
 import React ,{useState,useEffect}from 'react';
 import Seven from './compononents/seven'
-import {Switch,Route} from 'react-router-dom'
+import {Switch,Route,Link} from 'react-router-dom'
 import './App.css';
 
 function App() {
@@ -24,6 +24,7 @@ useEffect(()=>{
   return (
     <div className="App">
       <h1>Seven Wonders</h1>
+      <Link to='/'><button>add a wonder</button></Link>
     <Switch>
       <Route  exact path='/'>
         <Seven seven={seven}/>
