@@ -19,12 +19,14 @@ useEffect(()=>{
   getAll()
 },[])
 
+  //
+
   return (
     <div className="App">
       <h1>Seven Wonders</h1>
     <Switch>
-      <Route>
-        <Seven exact path='/' seven={seven}/>
+      <Route  exact path='/'>
+        <Seven seven={seven}/>
       </Route>
     </Switch>
      
