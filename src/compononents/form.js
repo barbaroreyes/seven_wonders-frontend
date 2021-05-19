@@ -22,20 +22,21 @@ import React,{useState} from 'react'
              name='name'
              value={formData.name}
              onChange={handleChange}
+             placeholder='place'
             />
             <input 
             type="text"
             name='img'
              value={formData.img}
              onChange={handleChange}
-          
+             placeholder='url'
              />
-              <input 
+              <textarea 
             type="text"
             name='description'
              value={formData.description}
              onChange={handleChange}
-          
+             placeholder='description'
              />
              <input type="submit" value={props.label} />
 
