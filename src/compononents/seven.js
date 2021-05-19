@@ -11,10 +11,10 @@ const Seven = ({seven,selectFw,history,handleDeleteW}) => {
                <img src={item.img} alt={item.name}/>
                <p>{item.description}</p>
                <button onClick={() =>{
-                   selectFw(seven)
+                   selectFw(item)
                    history.push("/edit")
                    }}>Edit</button>
-               <button onClick={() =>{handleDeleteW(seven)}}>Delete</button>
+               <button onClick={() =>{handleDeleteW(item)}}>Delete</button>
                </div>)
        })}
     </div>

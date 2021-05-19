@@ -40,13 +40,13 @@ const handleCreate = (newWonder) => {
    setSelectedW(seven)
  }
 
- const handleUpdate = (dog) => {
-  fetch(url + "/dog/" + dog._id, {
+ const handleUpdate = (seven) => {
+  fetch(url +'/sevenw/' + seven._id, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(dog),
+    body: JSON.stringify(seven),
   }).then(() => getAll());
 };
  const handleDeleteW = (seven)=> {
