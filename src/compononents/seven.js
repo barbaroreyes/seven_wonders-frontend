@@ -1,7 +1,8 @@
 import React from 'react'
 
-const Seven = ({seven,selectW,history,handleDeleteW}) => {
-    
+const Seven = ({seven,selectFw,history,handleDeleteW}) => {
+   const loaded = () => {
+      
   return (
     <div className="dad">
        {seven.map((item,i)=>{
@@ -10,7 +11,7 @@ const Seven = ({seven,selectW,history,handleDeleteW}) => {
                <img src={item.img} alt={item.name}/>
                <p>{item.description}</p>
                <button onClick={() =>{
-                   selectW(seven)
+                   selectFw(seven)
                    history.push("/edit")
                    }}>Edit</button>
                <button onClick={() =>{handleDeleteW(seven)}}>Delete</button>
@@ -18,6 +19,9 @@ const Seven = ({seven,selectW,history,handleDeleteW}) => {
        })}
     </div>
   )
+   }
+   const loading =() => <h1>Loading...</h1>
+   return  seven ? loaded() : loading()
 }
 
 export default Seven

@@ -39,7 +39,17 @@ const handleCreate = (newWonder) => {
  const selectFw = (seven)=>{
    setSelectedW(seven)
  }
- const handleDeleteW = ()=> {
+
+ const handleUpdate = (dog) => {
+  fetch(url + "/dog/" + dog._id, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(dog),
+  }).then(() => getAll());
+};
+ const handleDeleteW = (seven)=> {
   fetch(url +'/sevenw/' + seven._id, {
     method: "delete"
   })
@@ -61,15 +71,13 @@ const handleCreate = (newWonder) => {
         <Seven 
         {...rp}
         seven={seven}
-        selectW={selectFw}
+        selectFw={selectFw}
         handleDeleteW={handleDeleteW}
         />
       )}
-      
       />
-       
-      
-      <Route path='/create'
+    <Route 
+      path='/create'
       render={(rp)=>(
         <Form 
         {...rp}
@@ -79,6 +87,17 @@ const handleCreate = (newWonder) => {
         />
       )}
       />
+       <Route
+            exact
+            path="/edit"
+            render={(rp) => (
+              <Form 
+              {...rp} 
+              label="update" 
+              seven={selectedW} 
+              handleSubmit={handleUpdate} />
+            )}
+          />
        
       
     </Switch>
